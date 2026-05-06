@@ -17,9 +17,14 @@ def main():
             if event.type == pygame.QUIT:
                 return
         screen.fill("black")
+
         player.draw(screen)
+        player.update(dt)
+
+        # screen render
         pygame.display.flip()
-        # to reduce screen refresh
+
+        # to reduce refresh resource consumption
         clock.tick(60)
         dt = clock.tick(60) / 1000
 
